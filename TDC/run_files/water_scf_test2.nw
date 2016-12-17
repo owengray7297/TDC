@@ -1,0 +1,25 @@
+echo
+
+start h2o
+title "Water in STO-3G basis set"
+
+scratch_dir /scratch/owengray/water_scf_test2/
+
+geometry units au
+	O	0.00000000	0.00000000	0.00000000
+	H	0.00000000	1.43042809	-1.10715266
+	H	0.00000000	-1.43042809	-1.10715266
+end
+basis
+	H library STO-3G
+	O library STO-3G
+end
+dft
+	vectors output h2o.movecs
+	XC HFexch
+end
+TDDFT
+	CIS
+	CIVECS output h2o.mocivecs
+END
+TASK TDDFT energy

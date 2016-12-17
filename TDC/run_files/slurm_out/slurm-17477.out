@@ -1,0 +1,425 @@
+/bin/bash: BASH_FUNC_module(): line 0: syntax error near unexpected token `)'
+/bin/bash: BASH_FUNC_module(): line 0: `BASH_FUNC_module() () {  eval `/cm/local/apps/environment-modules/3.2.10/Modules/$MODULE_VERSION/bin/modulecmd bash $*`'
+/bin/bash: error importing function definition for `BASH_FUNC_module'
+ argument  1 = /scratch/owengray/water_scf_test2/water_scf_test2.nw
+
+
+
+============================== echo of input deck ==============================
+echo
+
+start h2o
+title "Water in STO-3G basis set"
+
+scratch_dir /scratch/owengray/water_scf_test2/
+
+geometry units au
+	O	0.00000000	0.00000000	0.00000000
+	H	0.00000000	1.43042809	-1.10715266
+	H	0.00000000	-1.43042809	-1.10715266
+end
+basis
+	H library STO-3G
+	O library STO-3G
+end
+dft
+	vectors h2o.movecs
+	XC HFexch
+end
+TDDFT
+ CIS
+ CIVECS h2o.mocivecs
+END
+TASK TDDFT OPTIMIZE
+TASK TDDFT FREQUENCIES
+================================================================================
+
+
+                                         
+                                         
+
+
+              Northwest Computational Chemistry Package (NWChem) 6.6
+              ------------------------------------------------------
+
+
+                    Environmental Molecular Sciences Laboratory
+                       Pacific Northwest National Laboratory
+                                Richland, WA 99352
+
+                              Copyright (c) 1994-2015
+                       Pacific Northwest National Laboratory
+                            Battelle Memorial Institute
+
+             NWChem is an open-source computational chemistry package
+                        distributed under the terms of the
+                      Educational Community License (ECL) 2.0
+             A copy of the license is included with this distribution
+                              in the LICENSE.TXT file
+
+                                  ACKNOWLEDGMENT
+                                  --------------
+
+            This software and its documentation were developed at the
+            EMSL at Pacific Northwest National Laboratory, a multiprogram
+            national laboratory, operated for the U.S. Department of Energy
+            by Battelle under Contract Number DE-AC05-76RL01830. Support
+            for this work was provided by the Department of Energy Office
+            of Biological and Environmental Research, Office of Basic
+            Energy Sciences, and the Office of Advanced Scientific Computing.
+
+
+           Job information
+           ---------------
+
+    hostname        = g21
+    program         = /cm/shared/NWChem/bin/nwchem
+    date            = Mon Jun 20 13:38:02 2016
+
+    compiled        = Wed_Jan_27_15:20:39_2016
+    source          = /cm/shared/nwchem-6.6
+    nwchem branch   = 6.6
+    nwchem revision = 27746
+    ga revision     = 10594
+    input           = /scratch/owengray/water_scf_test2/water_scf_test2.nw
+    prefix          = h2o.
+    data base       = ./h2o.db
+    status          = startup
+    nproc           =       20
+    time left       =     -1s
+
+
+
+           Memory information
+           ------------------
+
+    heap     =  210617852 doubles =   1606.9 Mbytes
+    stack    =  210617857 doubles =   1606.9 Mbytes
+    global   =  421235712 doubles =   3213.8 Mbytes (distinct from heap & stack)
+    total    =  842471421 doubles =   6427.5 Mbytes
+    verify   = yes
+    hardfail = no 
+
+
+           Directory information
+           ---------------------
+
+  0 permanent = .
+  0 scratch   = /scratch/owengray/water_scf_test2/
+
+
+
+
+                                NWChem Input Module
+                                -------------------
+
+
+                             Water in STO-3G basis set
+                             -------------------------
+ C2V symmetry detected
+
+          ------
+          auto-z
+          ------
+
+
+                             Geometry "geometry" -> ""
+                             -------------------------
+
+ Output coordinates in a.u. (scale by  1.000000000 to convert to a.u.)
+
+  No.       Tag          Charge          X              Y              Z
+ ---- ---------------- ---------- -------------- -------------- --------------
+    1 O                    8.0000     0.00000000     0.00000000     0.22143053
+    2 H                    1.0000    -1.43042809     0.00000000    -0.88572213
+    3 H                    1.0000     1.43042809     0.00000000    -0.88572213
+
+      Atomic Mass 
+      ----------- 
+
+      O                 15.994910
+      H                  1.007825
+
+
+ Effective nuclear repulsion energy (a.u.)       9.1949809303
+
+            Nuclear Dipole moment (a.u.) 
+            ----------------------------
+        X                 Y               Z
+ ---------------- ---------------- ----------------
+     0.0000000000     0.0000000000     0.0000000000
+
+      Symmetry information
+      --------------------
+
+ Group name             C2v       
+ Group number             16
+ Group order               4
+ No. of unique centers     2
+
+      Symmetry unique atoms
+
+     1    2
+
+
+
+                                Z-matrix (autoz)
+                                -------- 
+
+ Units are Angstrom for bonds and degrees for angles
+
+      Type          Name      I     J     K     L     M      Value
+      ----------- --------  ----- ----- ----- ----- ----- ----------
+    1 Stretch                  1     2                       0.95720
+    2 Stretch                  1     3                       0.95720
+    3 Bend                     2     1     3               104.52019
+
+
+            XYZ format geometry
+            -------------------
+     3
+ geometry
+ O                     0.00000000     0.00000000     0.11717600
+ H                    -0.75695000     0.00000000    -0.46870400
+ H                     0.75695000     0.00000000    -0.46870400
+
+ ==============================================================================
+                                internuclear distances
+ ------------------------------------------------------------------------------
+       center one      |      center two      | atomic units |       a.u.
+ ------------------------------------------------------------------------------
+    2 H                |   1 O                |     1.80884  |     1.80884
+    3 H                |   1 O                |     1.80884  |     1.80884
+ ------------------------------------------------------------------------------
+                         number of included internuclear distances:          2
+ ==============================================================================
+
+
+
+ ==============================================================================
+                                 internuclear angles
+ ------------------------------------------------------------------------------
+        center 1       |       center 2       |       center 3       |  degrees
+ ------------------------------------------------------------------------------
+    2 H                |   1 O                |   3 H                |   104.52
+ ------------------------------------------------------------------------------
+                            number of included internuclear angles:          1
+ ==============================================================================
+
+
+
+  library name resolved from: environment
+  library file name is: </cm/shared/NWChem/data/libraries/>
+  
+                      Basis "ao basis" -> "" (cartesian)
+                      -----
+  H (Hydrogen)
+  ------------
+            Exponent  Coefficients 
+       -------------- ---------------------------------------------------------
+  1 S  3.42525091E+00  0.154329
+  1 S  6.23913730E-01  0.535328
+  1 S  1.68855400E-01  0.444635
+
+  O (Oxygen)
+  ----------
+            Exponent  Coefficients 
+       -------------- ---------------------------------------------------------
+  1 S  1.30709320E+02  0.154329
+  1 S  2.38088610E+01  0.535328
+  1 S  6.44360830E+00  0.444635
+
+  2 S  5.03315130E+00 -0.099967
+  2 S  1.16959610E+00  0.399513
+  2 S  3.80389000E-01  0.700115
+
+  3 P  5.03315130E+00  0.155916
+  3 P  1.16959610E+00  0.607684
+  3 P  3.80389000E-01  0.391957
+
+
+
+ Summary of "ao basis" -> "" (cartesian)
+ ------------------------------------------------------------------------------
+       Tag                 Description            Shells   Functions and Types
+ ---------------- ------------------------------  ------  ---------------------
+ H                           STO-3G                  1        1   1s
+ O                           STO-3G                  3        5   2s1p
+
+
+  xc_inp: hfexch multiplicative factor not found.
+
+
+                           NWChem Geometry Optimization
+                           ----------------------------
+
+
+
+
+                             Water in STO-3G basis set
+
+
+ maximum gradient threshold         (gmax) =   0.000450
+ rms gradient threshold             (grms) =   0.000300
+ maximum cartesian step threshold   (xmax) =   0.001800
+ rms cartesian step threshold       (xrms) =   0.001200
+ fixed trust radius                (trust) =   0.300000
+ maximum step size to saddle      (sadstp) =   0.100000
+ energy precision                  (eprec) =   1.0D-07
+ maximum number of steps          (nptopt) =   20
+ initial hessian option           (inhess) =    0
+ line search option               (linopt) =    1
+ hessian update option            (modupd) =    1
+ saddle point option              (modsad) =    0
+ initial eigen-mode to follow     (moddir) =    0
+ initial variable to follow       (vardir) =    0
+ follow first negative mode     (firstneg) =    T
+ apply conjugacy                    (opcg) =    F
+ source of zmatrix                         =   autoz   
+
+
+          -------------------
+          Energy Minimization
+          -------------------
+
+
+ Names of Z-matrix variables 
+    1              2              3         
+
+ Variables with the same non-blank name are constrained to be equal
+
+
+ Using diagonal initial Hessian 
+ Scaling for Hessian diagonals: bonds = 1.00  angles = 0.25  torsions = 0.10
+
+          --------
+          Step   0
+          --------
+
+
+                         Geometry "geometry" -> "geometry"
+                         ---------------------------------
+
+ Output coordinates in a.u. (scale by  1.000000000 to convert to a.u.)
+
+  No.       Tag          Charge          X              Y              Z
+ ---- ---------------- ---------- -------------- -------------- --------------
+    1 O                    8.0000     0.00000000     0.00000000     0.22143053
+    2 H                    1.0000    -1.43042809     0.00000000    -0.88572213
+    3 H                    1.0000     1.43042809     0.00000000    -0.88572213
+
+      Atomic Mass 
+      ----------- 
+
+      O                 15.994910
+      H                  1.007825
+
+
+ Effective nuclear repulsion energy (a.u.)       9.1949809303
+
+            Nuclear Dipole moment (a.u.) 
+            ----------------------------
+        X                 Y               Z
+ ---------------- ---------------- ----------------
+     0.0000000000     0.0000000000     0.0000000000
+
+      Symmetry information
+      --------------------
+
+ Group name             C2v       
+ Group number             16
+ Group order               4
+ No. of unique centers     2
+
+      Symmetry unique atoms
+
+     1    2
+
+
+                                 NWChem DFT Module
+                                 -----------------
+
+
+                             Water in STO-3G basis set
+
+
+
+
+ Summary of "ao basis" -> "ao basis" (cartesian)
+ ------------------------------------------------------------------------------
+       Tag                 Description            Shells   Functions and Types
+ ---------------- ------------------------------  ------  ---------------------
+ H                           STO-3G                  1        1   1s
+ O                           STO-3G                  3        5   2s1p
+
+
+      Symmetry analysis of basis
+      --------------------------
+
+        a1          4
+        a2          0
+        b1          2
+        b2          1
+
+ ------------------------------------------------------------------------
+ movecs_converged: error opening file                   0
+ ------------------------------------------------------------------------
+ ------------------------------------------------------------------------
+  current input line : 
+    25: TASK TDDFT OPTIMIZE
+ ------------------------------------------------------------------------
+ ------------------------------------------------------------------------
+ An error occured while trying to read or write to disk space
+ ------------------------------------------------------------------------
+ For more information see the NWChem manual at http://www.nwchem-sw.org/index.php/NWChem_Documentation
+
+
+ For further details see manual section:                                                                                                                                                                                                                                                                
+0:0:movecs_converged: error opening file:: -1
+(rank:0 hostname:g21 pid:37128):ARMCI DASSERT fail. ../../ga-5-4/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+Last System Error Message from Task 0:: No such file or directory
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI COMMUNICATOR 4 DUP FROM 0 
+with errorcode -1.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+Last System Error Message from Task 19:: No such file or directory
+Last System Error Message from Task 1:: No such file or directory
+Last System Error Message from Task 2:: No such file or directory
+Last System Error Message from Task 3:: No such file or directory
+Last System Error Message from Task 4:: No such file or directory
+Last System Error Message from Task 5:: No such file or directory
+Last System Error Message from Task 6:: No such file or directory
+Last System Error Message from Task 7:: No such file or directory
+Last System Error Message from Task 8:: No such file or directory
+Last System Error Message from Task 9:: No such file or directory
+Last System Error Message from Task 10:: No such file or directory
+Last System Error Message from Task 11:: No such file or directory
+Last System Error Message from Task 12:: No such file or directory
+Last System Error Message from Task 13:: No such file or directory
+Last System Error Message from Task 14:: No such file or directory
+Last System Error Message from Task 15:: No such file or directory
+Last System Error Message from Task 16:: No such file or directory
+Last System Error Message from Task 17:: No such file or directory
+Last System Error Message from Task 18:: No such file or directory
+--------------------------------------------------------------------------
+mpirun has exited due to process rank 0 with PID 37128 on
+node g21 exiting improperly. There are two reasons this could occur:
+
+1. this process did not call "init" before exiting, but others in
+the job did. This can cause a job to hang indefinitely while it waits
+for all processes to call "init". By rule, if one process calls "init",
+then ALL processes must call "init" prior to termination.
+
+2. this process called "init", but exited without calling "finalize".
+By rule, all processes that call "init" MUST call "finalize" prior to
+exiting or it will be considered an "abnormal termination"
+
+This may have caused other processes in the application to be
+terminated by signals sent by mpirun (as reported here).
+--------------------------------------------------------------------------
+[g21:37127] 19 more processes have sent help message help-mpi-api.txt / mpi-abort
+[g21:37127] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages

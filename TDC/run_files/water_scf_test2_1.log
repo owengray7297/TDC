@@ -1,0 +1,2107 @@
+ argument  1 = /scratch/owengray/water_scf_test2/water_scf_test2.nw
+
+
+
+============================== echo of input deck ==============================
+echo
+
+start h2o
+title "Water in STO-3G basis set"
+
+scratch_dir /scratch/owengray/water_scf_test2/
+
+geometry units au
+	O	0.00000000	0.00000000	0.00000000
+	H	0.00000000	1.43042809	-1.10715266
+	H	0.00000000	-1.43042809	-1.10715266
+end
+basis
+	H library STO-3G
+	O library STO-3G
+end
+dft
+	vectors output h2o.movecs
+	XC HFexch
+end
+TDDFT
+ CIS
+ CIVECS output h2o.mocivecs
+ print debug
+END
+TASK TDDFT energy
+================================================================================
+
+
+                                         
+                                         
+
+
+              Northwest Computational Chemistry Package (NWChem) 6.6
+              ------------------------------------------------------
+
+
+                    Environmental Molecular Sciences Laboratory
+                       Pacific Northwest National Laboratory
+                                Richland, WA 99352
+
+                              Copyright (c) 1994-2015
+                       Pacific Northwest National Laboratory
+                            Battelle Memorial Institute
+
+             NWChem is an open-source computational chemistry package
+                        distributed under the terms of the
+                      Educational Community License (ECL) 2.0
+             A copy of the license is included with this distribution
+                              in the LICENSE.TXT file
+
+                                  ACKNOWLEDGMENT
+                                  --------------
+
+            This software and its documentation were developed at the
+            EMSL at Pacific Northwest National Laboratory, a multiprogram
+            national laboratory, operated for the U.S. Department of Energy
+            by Battelle under Contract Number DE-AC05-76RL01830. Support
+            for this work was provided by the Department of Energy Office
+            of Biological and Environmental Research, Office of Basic
+            Energy Sciences, and the Office of Advanced Scientific Computing.
+
+
+           Job information
+           ---------------
+
+    hostname        = g25
+    program         = /cm/shared/NWChem/bin/nwchem
+    date            = Wed Jun 22 14:41:51 2016
+
+    compiled        = Wed_Jan_27_15:20:39_2016
+    source          = /cm/shared/nwchem-6.6
+    nwchem branch   = 6.6
+    nwchem revision = 27746
+    ga revision     = 10594
+    input           = /scratch/owengray/water_scf_test2/water_scf_test2.nw
+    prefix          = h2o.
+    data base       = ./h2o.db
+    status          = startup
+    nproc           =       20
+    time left       =     -1s
+
+
+
+           Memory information
+           ------------------
+
+    heap     =  210617852 doubles =   1606.9 Mbytes
+    stack    =  210617857 doubles =   1606.9 Mbytes
+    global   =  421235712 doubles =   3213.8 Mbytes (distinct from heap & stack)
+    total    =  842471421 doubles =   6427.5 Mbytes
+    verify   = yes
+    hardfail = no 
+
+
+           Directory information
+           ---------------------
+
+  0 permanent = .
+  0 scratch   = /scratch/owengray/water_scf_test2/
+
+
+
+
+                                NWChem Input Module
+                                -------------------
+
+
+                             Water in STO-3G basis set
+                             -------------------------
+ C2V symmetry detected
+
+          ------
+          auto-z
+          ------
+
+
+                             Geometry "geometry" -> ""
+                             -------------------------
+
+ Output coordinates in a.u. (scale by  1.000000000 to convert to a.u.)
+
+  No.       Tag          Charge          X              Y              Z
+ ---- ---------------- ---------- -------------- -------------- --------------
+    1 O                    8.0000     0.00000000     0.00000000     0.22143053
+    2 H                    1.0000    -1.43042809     0.00000000    -0.88572213
+    3 H                    1.0000     1.43042809     0.00000000    -0.88572213
+
+      Atomic Mass 
+      ----------- 
+
+      O                 15.994910
+      H                  1.007825
+
+
+ Effective nuclear repulsion energy (a.u.)       9.1949809303
+
+            Nuclear Dipole moment (a.u.) 
+            ----------------------------
+        X                 Y               Z
+ ---------------- ---------------- ----------------
+     0.0000000000     0.0000000000     0.0000000000
+
+      Symmetry information
+      --------------------
+
+ Group name             C2v       
+ Group number             16
+ Group order               4
+ No. of unique centers     2
+
+      Symmetry unique atoms
+
+     1    2
+
+
+
+                                Z-matrix (autoz)
+                                -------- 
+
+ Units are Angstrom for bonds and degrees for angles
+
+      Type          Name      I     J     K     L     M      Value
+      ----------- --------  ----- ----- ----- ----- ----- ----------
+    1 Stretch                  1     2                       0.95720
+    2 Stretch                  1     3                       0.95720
+    3 Bend                     2     1     3               104.52019
+
+
+            XYZ format geometry
+            -------------------
+     3
+ geometry
+ O                     0.00000000     0.00000000     0.11717600
+ H                    -0.75695000     0.00000000    -0.46870400
+ H                     0.75695000     0.00000000    -0.46870400
+
+ ==============================================================================
+                                internuclear distances
+ ------------------------------------------------------------------------------
+       center one      |      center two      | atomic units |       a.u.
+ ------------------------------------------------------------------------------
+    2 H                |   1 O                |     1.80884  |     1.80884
+    3 H                |   1 O                |     1.80884  |     1.80884
+ ------------------------------------------------------------------------------
+                         number of included internuclear distances:          2
+ ==============================================================================
+
+
+
+ ==============================================================================
+                                 internuclear angles
+ ------------------------------------------------------------------------------
+        center 1       |       center 2       |       center 3       |  degrees
+ ------------------------------------------------------------------------------
+    2 H                |   1 O                |   3 H                |   104.52
+ ------------------------------------------------------------------------------
+                            number of included internuclear angles:          1
+ ==============================================================================
+
+
+
+  library name resolved from: environment
+  library file name is: </cm/shared/NWChem/data/libraries/>
+  
+                      Basis "ao basis" -> "" (cartesian)
+                      -----
+  H (Hydrogen)
+  ------------
+            Exponent  Coefficients 
+       -------------- ---------------------------------------------------------
+  1 S  3.42525091E+00  0.154329
+  1 S  6.23913730E-01  0.535328
+  1 S  1.68855400E-01  0.444635
+
+  O (Oxygen)
+  ----------
+            Exponent  Coefficients 
+       -------------- ---------------------------------------------------------
+  1 S  1.30709320E+02  0.154329
+  1 S  2.38088610E+01  0.535328
+  1 S  6.44360830E+00  0.444635
+
+  2 S  5.03315130E+00 -0.099967
+  2 S  1.16959610E+00  0.399513
+  2 S  3.80389000E-01  0.700115
+
+  3 P  5.03315130E+00  0.155916
+  3 P  1.16959610E+00  0.607684
+  3 P  3.80389000E-01  0.391957
+
+
+
+ Summary of "ao basis" -> "" (cartesian)
+ ------------------------------------------------------------------------------
+       Tag                 Description            Shells   Functions and Types
+ ---------------- ------------------------------  ------  ---------------------
+ H                           STO-3G                  1        1   1s
+ O                           STO-3G                  3        5   2s1p
+
+
+  xc_inp: hfexch multiplicative factor not found.
+
+                                 NWChem DFT Module
+                                 -----------------
+
+
+                             Water in STO-3G basis set
+
+
+
+
+ Summary of "ao basis" -> "ao basis" (cartesian)
+ ------------------------------------------------------------------------------
+       Tag                 Description            Shells   Functions and Types
+ ---------------- ------------------------------  ------  ---------------------
+ H                           STO-3G                  1        1   1s
+ O                           STO-3G                  3        5   2s1p
+
+
+      Symmetry analysis of basis
+      --------------------------
+
+        a1          4
+        a2          0
+        b1          2
+        b2          1
+
+  Caching 1-el integrals 
+
+            General Information
+            -------------------
+          SCF calculation type: DFT
+          Wavefunction type:  closed shell.
+          No. of atoms     :     3
+          No. of electrons :    10
+           Alpha electrons :     5
+            Beta electrons :     5
+          Charge           :     0
+          Spin multiplicity:     1
+          Use of symmetry is: off; symmetry adaption is: on 
+          Maximum number of iterations:  30
+          AO basis - number of functions:     7
+                     number of shells:     5
+          Convergence on energy requested: 1.00D-06
+          Convergence on density requested: 1.00D-05
+          Convergence on gradient requested: 5.00D-04
+
+              XC Information
+              --------------
+                     Hartree-Fock (Exact) Exchange  1.000          
+
+          Convergence Information
+          -----------------------
+          Convergence aids based upon iterative change in 
+          total energy or number of iterations. 
+          Levelshifting, if invoked, occurs when the 
+          HOMO/LUMO gap drops below (HL_TOL): 1.00D-02
+          DIIS, if invoked, will attempt to extrapolate 
+          using up to (NFOCK): 10 stored Fock matrices.
+
+                    Damping( 0%)  Levelshifting(0.5)       DIIS
+                  --------------- ------------------- ---------------
+          dE  on:    start            ASAP                start   
+          dE off:    2 iters         30 iters            30 iters 
+
+
+      Screening Tolerance Information
+      -------------------------------
+          Density screening/tol_rho: 1.00D-10
+          AO Gaussian exp screening on grid/accAOfunc:  14
+          CD Gaussian exp screening on grid/accCDfunc:  20
+          XC Gaussian exp screening on grid/accXCfunc:  20
+          Schwarz screening/accCoul: 1.00D-08
+
+
+      Superposition of Atomic Density Guess
+      -------------------------------------
+
+ Sum of atomic energies:         -74.71095592
+
+      Non-variational initial energy
+      ------------------------------
+
+ Total energy =     -74.684282
+ 1-e energy   =    -121.785558
+ 2-e energy   =      37.906295
+ HOMO         =      -0.258522
+ LUMO         =       0.505358
+
+
+      Symmetry analysis of molecular orbitals - initial
+      -------------------------------------------------
+
+  Numbering of irreducible representations: 
+
+     1 a1          2 a2          3 b1          4 b2      
+
+  Orbital symmetries:
+
+     1 a1          2 a1          3 b1          4 a1          5 b2      
+     6 a1          7 b1      
+
+   Time after variat. SCF:      0.0
+   Time prior to 1st pass:      0.0
+
+           Memory utilization after 1st SCF pass: 
+           Heap Space remaining (MW):      210.62           210617028
+          Stack Space remaining (MW):      210.62           210617668
+
+   convergence    iter        energy       DeltaE   RMS-Dens  Diis-err    time
+ ---------------- ----- ----------------- --------- --------- ---------  ------
+ d= 0,ls=0.0,diis     1    -74.9243613403 -8.41D+01  7.03D-02  2.11D-01     0.1
+ d= 0,ls=0.0,diis     2    -74.9624905081 -3.81D-02  5.65D-03  2.96D-03     0.1
+ d= 0,ls=0.0,diis     3    -74.9629051587 -4.15D-04  2.03D-03  1.20D-04     0.1
+ d= 0,ls=0.0,diis     4    -74.9629279323 -2.28D-05  3.02D-05  1.85D-08     0.1
+ d= 0,ls=0.0,diis     5    -74.9629279377 -5.36D-09  1.31D-05  1.31D-09     0.1
+ d= 0,ls=0.0,diis     6    -74.9629279382 -5.16D-10  7.80D-07  5.57D-12     0.1
+
+
+         Total DFT energy =      -74.962927938207
+      One electron energy =     -122.371176442532
+           Coulomb energy =       47.318083233781
+    Exchange-Corr. energy =       -9.104815659732
+ Nuclear repulsion energy =        9.194980930276
+
+ Numeric. integr. density =        0.000000000000
+
+     Total iterative time =      0.0s
+
+
+
+                  Occupations of the irreducible representations
+                  ----------------------------------------------
+
+                     irrep           alpha         beta
+                     --------     --------     --------
+                     a1                3.0          3.0
+                     a2                0.0          0.0
+                     b1                1.0          1.0
+                     b2                1.0          1.0
+
+
+                       DFT Final Molecular Orbital Analysis
+                       ------------------------------------
+
+ Vector    1  Occ=2.000000D+00  E=-2.024174D+01  Symmetry=a1
+              MO Center=  2.8D-18,  7.0D-18,  1.2D-01, r^2= 1.5D-02
+   Bfn.  Coefficient  Atom+Function         Bfn.  Coefficient  Atom+Function  
+  ----- ------------  ---------------      ----- ------------  ---------------
+     1      0.994129  1 O  s          
+
+ Vector    2  Occ=2.000000D+00  E=-1.268410D+00  Symmetry=a1
+              MO Center=  7.6D-17,  5.2D-17, -7.2D-02, r^2= 5.4D-01
+   Bfn.  Coefficient  Atom+Function         Bfn.  Coefficient  Atom+Function  
+  ----- ------------  ---------------      ----- ------------  ---------------
+     2      0.833491  1 O  s                  1     -0.232786  1 O  s          
+     6      0.158722  2 H  s                  7      0.158722  3 H  s          
+
+ Vector    3  Occ=2.000000D+00  E=-6.179355D-01  Symmetry=b1
+              MO Center= -4.4D-16, -3.8D-36, -1.4D-01, r^2= 8.3D-01
+   Bfn.  Coefficient  Atom+Function         Bfn.  Coefficient  Atom+Function  
+  ----- ------------  ---------------      ----- ------------  ---------------
+     3      0.606443  1 O  px                 6     -0.445001  2 H  s          
+     7      0.445001  3 H  s          
+
+ Vector    4  Occ=2.000000D+00  E=-4.529942D-01  Symmetry=a1
+              MO Center=  3.4D-16,  5.5D-17,  1.6D-01, r^2= 6.2D-01
+   Bfn.  Coefficient  Atom+Function         Bfn.  Coefficient  Atom+Function  
+  ----- ------------  ---------------      ----- ------------  ---------------
+     5      0.776745  1 O  pz                 2      0.536861  1 O  s          
+     6     -0.277826  2 H  s                  7     -0.277826  3 H  s          
+
+ Vector    5  Occ=2.000000D+00  E=-3.912446D-01  Symmetry=b2
+              MO Center=  3.2D-35, -1.6D-16,  1.2D-01, r^2= 4.2D-01
+   Bfn.  Coefficient  Atom+Function         Bfn.  Coefficient  Atom+Function  
+  ----- ------------  ---------------      ----- ------------  ---------------
+     4      1.000000  1 O  py         
+
+ Vector    6  Occ=0.000000D+00  E= 6.056752D-01  Symmetry=a1
+              MO Center=  2.4D-15,  4.2D-17, -3.9D-01, r^2= 1.1D+00
+   Bfn.  Coefficient  Atom+Function         Bfn.  Coefficient  Atom+Function  
+  ----- ------------  ---------------      ----- ------------  ---------------
+     2      0.884766  1 O  s                  6     -0.797164  2 H  s          
+     7     -0.797164  3 H  s                  5     -0.742313  1 O  pz         
+
+ Vector    7  Occ=0.000000D+00  E= 7.424017D-01  Symmetry=b1
+              MO Center= -2.4D-15, -4.9D-36, -2.3D-01, r^2= 1.0D+00
+   Bfn.  Coefficient  Atom+Function         Bfn.  Coefficient  Atom+Function  
+  ----- ------------  ---------------      ----- ------------  ---------------
+     3      0.990605  1 O  px                 6      0.838701  2 H  s          
+     7     -0.838701  3 H  s          
+
+
+ center of mass
+ --------------
+ x =   0.00000000 y =   0.00000000 z =   0.09752365
+
+ moments of inertia (a.u.)
+ ------------------
+           2.194243005950           0.000000000000           0.000000000000
+           0.000000000000           6.318513896020           0.000000000000
+           0.000000000000           0.000000000000           4.124270890070
+
+     Multipole analysis of the density
+     ---------------------------------
+
+     L   x y z        total         alpha         beta         nuclear
+     -   - - -        -----         -----         ----         -------
+     0   0 0 0     -0.000000     -5.000000     -5.000000     10.000000
+
+     1   1 0 0      0.000000      0.000000      0.000000      0.000000
+     1   0 1 0      0.000000      0.000000      0.000000      0.000000
+     1   0 0 1     -0.678981     -0.339491     -0.339491      0.000000
+
+     2   2 0 0     -3.239721     -3.665985     -3.665985      4.092249
+     2   1 1 0      0.000000      0.000000      0.000000      0.000000
+     2   1 0 1     -0.000000     -0.000000     -0.000000      0.000000
+     2   0 2 0     -4.530981     -2.265491     -2.265491      0.000000
+     2   0 1 1     -0.000000     -0.000000     -0.000000      0.000000
+     2   0 0 2     -4.010100     -2.985680     -2.985680      1.961259
+
+ nwchem basis set
+ ics=  1 ib=  0 nat=  1 shz=  1 gc=  0 ie=  3 lcf=  1 fcf=  0 type= 1
+ ics=  2 ib=  3 nat=  1 shz=  1 gc=  0 ie=  6 lcf=  2 fcf=  1 type= 1
+ ics=  3 ib=  6 nat=  1 shz=  3 gc=  0 ie=  9 lcf=  5 fcf=  2 type= 2
+ ics=  4 ib=  9 nat=  2 shz=  1 gc=  0 ie= 12 lcf=  6 fcf=  5 type= 1
+ ics=  5 ib= 12 nat=  3 shz=  1 gc=  0 ie= 15 lcf=  7 fcf=  6 type= 1
+ texas basis set
+ ics=  1 ib=  9 nat=  2 shz=  1 gc=  0 ie= 12 lcf=  1 fcf=  0 type= 1
+ ics=  2 ib= 12 nat=  3 shz=  1 gc=  0 ie= 15 lcf=  2 fcf=  1 type= 1
+ ics=  3 ib=  3 nat=  1 shz=  1 gc=  0 ie=  6 lcf=  3 fcf=  2 type= 1
+ ics=  4 ib=  0 nat=  1 shz=  1 gc=  0 ie=  3 lcf=  4 fcf=  3 type= 1
+ ics=  5 ib=  6 nat=  1 shz=  3 gc=  0 ie=  9 lcf=  7 fcf=  4 type= 2
+ translation shell-nwchem -> shell-texas
+                    1                    4
+                    2                    3
+                    3                    5
+                    4                    1
+                    5                    2
+
+ Schwarz integral screening summary 
+ ---------------------------------- 
+
+        No. of atom pairs =       6
+       No. of shell pairs =      15
+
+ Atomic screening 
+
+   value      no.     value      no.     value      no.     value      no.   
+  -------- ------    -------- ------    -------- ------    -------- ------   
+  0.00D+00      0    1.00D-13      0    1.00D-12      0    1.00D-11      0
+  1.00D-10      0    1.00D-09      0    1.00D-08      0    1.00D-07      0
+  1.00D-06      0    1.00D-05      0    1.00D-04      0    1.00D-03      0
+  1.00D-02      0    1.00D-01      1    1.00D+00      5    1.00D+01      0
+
+
+ Shell screening 
+
+   value      no.     value      no.     value      no.     value      no.   
+  -------- ------    -------- ------    -------- ------    -------- ------   
+  0.00D+00      0    1.00D-13      0    1.00D-12      0    1.00D-11      0
+  1.00D-10      0    1.00D-09      0    1.00D-08      0    1.00D-07      0
+  1.00D-06      0    1.00D-05      0    1.00D-04      0    1.00D-03      0
+  1.00D-02      0    1.00D-01      4    1.00D+00     11    1.00D+01      0
+
+
+
+ Setting fock-build task_bf   :      -1
+                    maxquartet:   10000
+                    maxeri    :  129600
+                    maxscr    :       0
+                    intacc    : 0.0D+00
+                    denscreen : T
+                    dentol    : 1.0D-06
+
+
+ Read molecular orbitals from ./h2o.movecs
+
+
+ Eigenvalues
+-------------------------
+
+              1
+    1 -20.24174
+    2  -1.26841
+    3  -0.61794
+    4  -0.45299
+    5  -0.39124
+    6   0.60568
+    7   0.74240
+-------------------------
+
+
+ Occupancies
+-------------------------
+
+              1
+    1   2.00000
+    2   2.00000
+    3   2.00000
+    4   2.00000
+    5   2.00000
+    6   0.00000
+    7   0.00000
+-------------------------
+
+
+ global array: MO eigenvectors[1:7,1:7],  handle: -1000 
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.99413    -0.23279    -0.00000    -0.10318     0.00000    -0.13239
+   2       0.02656     0.83349     0.00000     0.53686    -0.00000     0.88477
+   3       0.00000     0.00000     0.60644    -0.00000    -0.00000     0.00000
+   4       0.00000     0.00000    -0.00000     0.00000     1.00000     0.00000
+   5      -0.00435    -0.12960     0.00000     0.77675     0.00000    -0.74231
+   6      -0.00597     0.15872    -0.44500    -0.27783     0.00000    -0.79716
+   7      -0.00597     0.15872     0.44500    -0.27783     0.00000    -0.79716
+
+            7  
+       -----------
+   1       0.00000
+   2      -0.00000
+   3       0.99060
+   4       0.00000
+   5       0.00000
+   6       0.83870
+   7      -0.83870
+ Spin                     1
+  orbital                    1 a1  
+  orbital                    2 a1  
+  orbital                    3 b1  
+  orbital                    4 a1  
+  orbital                    5 b2  
+  orbital                    6 a1  
+  orbital                    7 b1  
+                                NWChem TDDFT Module
+                                -------------------
+
+
+                             Water in STO-3G basis set
+
+
+            General Information
+            -------------------
+           No. of orbitals :    14
+            Alpha orbitals :     7
+             Beta orbitals :     7
+        Alpha frozen cores :     0
+         Beta frozen cores :     0
+     Alpha frozen virtuals :     0
+      Beta frozen virtuals :     0
+         Spin multiplicity :     1
+    Number of AO functions :     7
+        Use of symmetry is : off
+      Symmetry adaption is : on 
+         Schwarz screening : 0.10D-07
+
+              XC Information
+              --------------
+              Hartree-Fock (Exact) Exchange   1.00          
+
+             TDDFT Information
+             -----------------
+          Calculation type : CIS               
+         Wavefunction type : Restricted singlets & triplets
+          No. of electrons :    10
+           Alpha electrons :     5
+            Beta electrons :     5
+              No. of roots :     1
+          Max subspacesize :  4200
+            Max iterations :   100
+               Target root :     1
+           Target symmetry : none
+      Symmetry restriction : off
+                 Algorithm : Optimal
+        Davidson threshold : 0.10D-03
+
+            Memory Information
+            ------------------
+          Available GA space size is        8424714191 doubles
+          Available MA space size is         421234972 doubles
+          Length of a trial vector is           10
+          Algorithm : Incore multiple tensor contraction
+          Estimated peak GA usage is            126549 doubles
+          Estimated peak MA usage is               600 doubles
+  Memleft= 421227263 doubles
+ Ground state symmetry a1  
+
+    1 smallest eigenvalue differences (eV) 
+--------------------------------------------------------
+  No. Spin  Occ  Vir  Irrep   E(Occ)    E(Vir)   E(Diff)
+--------------------------------------------------------
+    1    1    5    6 b2       -0.391     0.606    27.128
+--------------------------------------------------------
+          Number of initial trial vectors generated        1
+
+Vector    1
+ Spin  Occ  Vir     X+Y
+    1    1    6   0.00000
+    1    1    7   0.00000
+    1    2    6   0.00000
+    1    2    7   0.00000
+    1    3    6   0.00000
+    1    3    7   0.00000
+    1    4    6   0.00000
+    1    4    7   0.00000
+    1    5    6   1.00000
+    1    5    7   0.00000
+
+  Entering Davidson iterations
+  Restricted singlet excited states
+
+  Iter   NTrls   NConv    DeltaV     DeltaE      Time   
+  ----  ------  ------  ---------  ---------  --------- 
+
+ global array: Trial density[1:7,1:7],  handle: -997 
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.00000     0.00000     0.00000    -0.13239    -0.00000    -0.00000
+   2       0.00000    -0.00000    -0.00000     0.88477     0.00000     0.00000
+   3       0.00000    -0.00000    -0.00000     0.00000     0.00000     0.00000
+   4       0.00000    -0.00000    -0.00000     0.00000     0.00000     0.00000
+   5      -0.00000     0.00000     0.00000    -0.74231    -0.00000    -0.00000
+   6      -0.00000     0.00000     0.00000    -0.79716    -0.00000    -0.00000
+   7      -0.00000     0.00000     0.00000    -0.79716    -0.00000    -0.00000
+
+            7  
+       -----------
+   1      -0.00000
+   2       0.00000
+   3       0.00000
+   4       0.00000
+   5      -0.00000
+   6      -0.00000
+   7      -0.00000
+             Transform       0.0 CPU seconds       0.0 Wall seconds
+  Memleft= 421227156 doubles
+
+ global array: Work sym[1:1,1:7,1:7],  handle: -992 
+
+ -- patch: Work sym[1:1,1:7,1]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.00000     0.00000     0.00000    -0.13239    -0.00000    -0.00000
+
+            7  
+       -----------
+   1      -0.00000
+
+ -- patch: Work sym[1:1,1:7,2]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000    -0.00000    -0.00000     0.88477     0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work sym[1:1,1:7,3]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000    -0.00000    -0.00000     0.00000     0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work sym[1:1,1:7,4]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.13239     0.88477     0.00000     0.00000    -0.74231    -0.79716
+
+            7  
+       -----------
+   1      -0.79716
+
+ -- patch: Work sym[1:1,1:7,5]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.00000     0.00000     0.00000    -0.74231    -0.00000    -0.00000
+
+            7  
+       -----------
+   1      -0.00000
+
+ -- patch: Work sym[1:1,1:7,6]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.00000     0.00000     0.00000    -0.79716    -0.00000    -0.00000
+
+            7  
+       -----------
+   1      -0.00000
+
+ -- patch: Work sym[1:1,1:7,7]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.00000     0.00000     0.00000    -0.79716    -0.00000    -0.00000
+
+            7  
+       -----------
+   1      -0.00000
+  shmap   4     5     1     2     3
+  type       2048     2048     2049     2081  1050689
+ nshblocks   4   blen  7  maxsh 10
+  shglo   1     3     4     5
+  shghi   2     3     4     5
+  bfglo   1     3     4     5
+  bfghi   2     3     4     7
+  bfmap   6     7     1     2     3     4     5
+ rbfmap   3     4     5     6     7     1     2
+ shbflo   1     2     3     4     5
+ shbfhi   1     2     3     4     7
+
+ global array: Work product[1:1,1:7,1:7],  handle: -993 
+
+ -- patch: Work product[1:1,1:7,1]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000     0.00000    -0.00000     0.02833    -0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work product[1:1,1:7,2]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000     0.00000     0.00000     0.00787    -0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work product[1:1,1:7,3]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.00000     0.00000     0.00000    -0.00000     0.00000    -0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work product[1:1,1:7,4]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.02833     0.00787    -0.00000     0.00000     0.13810     0.08609
+
+            7  
+       -----------
+   1       0.08609
+
+ -- patch: Work product[1:1,1:7,5]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.00000    -0.00000     0.00000     0.13810     0.00000    -0.00000
+
+            7  
+       -----------
+   1      -0.00000
+
+ -- patch: Work product[1:1,1:7,6]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000     0.00000    -0.00000     0.08609    -0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work product[1:1,1:7,7]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000     0.00000     0.00000     0.08609    -0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ global array: Work sym[1:1,1:7,1:7],  handle: -992 
+
+ -- patch: Work sym[1:1,1:7,1]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000    -0.00000    -0.00000     0.13239     0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work sym[1:1,1:7,2]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000     0.00000     0.00000    -0.88477     0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work sym[1:1,1:7,3]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000    -0.00000     0.00000    -0.00000     0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work sym[1:1,1:7,4]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.13239     0.88477     0.00000     0.00000    -0.74231    -0.79716
+
+            7  
+       -----------
+   1      -0.79716
+
+ -- patch: Work sym[1:1,1:7,5]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.00000    -0.00000    -0.00000     0.74231     0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work sym[1:1,1:7,6]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.00000    -0.00000    -0.00000     0.79716    -0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work sym[1:1,1:7,7]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.00000    -0.00000    -0.00000     0.79716    -0.00000    -0.00000
+
+            7  
+       -----------
+   1       0.00000
+  shmap   4     5     1     2     3
+  type       2048     2048     2049     2081  1050689
+ nshblocks   4   blen  7  maxsh 10
+  shglo   1     3     4     5
+  shghi   2     3     4     5
+  bfglo   1     3     4     5
+  bfghi   2     3     4     7
+  bfmap   6     7     1     2     3     4     5
+ rbfmap   3     4     5     6     7     1     2
+ shbflo   1     2     3     4     5
+ shbfhi   1     2     3     4     7
+
+ global array: Work[1:1,1:7,1:7],  handle: -990 
+
+ -- patch: Work[1:1,1:7,1]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000     0.00000     0.00000    -0.01402    -0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work[1:1,1:7,2]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000     0.00000    -0.00000     0.05528    -0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work[1:1,1:7,3]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.00000     0.00000     0.00000     0.00000     0.00000    -0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work[1:1,1:7,4]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.01402    -0.05528    -0.00000     0.00000     0.16254     0.06508
+
+            7  
+       -----------
+   1       0.06508
+
+ -- patch: Work[1:1,1:7,5]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000     0.00000    -0.00000    -0.16254     0.00000    -0.00000
+
+            7  
+       -----------
+   1      -0.00000
+
+ -- patch: Work[1:1,1:7,6]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000     0.00000     0.00000    -0.06508     0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work[1:1,1:7,7]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000     0.00000    -0.00000    -0.06508     0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ global array: Work product[1:1,1:7,1:7],  handle: -993 
+
+ -- patch: Work product[1:1,1:7,1]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000     0.00000     0.00000     0.01431    -0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work product[1:1,1:7,2]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000     0.00000     0.00000     0.06315    -0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work product[1:1,1:7,3]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.00000     0.00000     0.00000     0.00000     0.00000    -0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work product[1:1,1:7,4]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.04235    -0.04741    -0.00000     0.00000     0.30064     0.15117
+
+            7  
+       -----------
+   1       0.15117
+
+ -- patch: Work product[1:1,1:7,5]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000     0.00000    -0.00000    -0.02443     0.00000    -0.00000
+
+            7  
+       -----------
+   1      -0.00000
+
+ -- patch: Work product[1:1,1:7,6]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000     0.00000    -0.00000     0.02102    -0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work product[1:1,1:7,7]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000     0.00000     0.00000     0.02102    -0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+              Contract       0.0 CPU seconds       0.0 Wall seconds
+  Memleft= 421227156 doubles
+
+ A+B
+-------------------------
+
+              1
+    1   0.48518
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.48518
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.48518
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.48518
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.48518
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.48518
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.48518
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.48518
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.48518
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.48518
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.48518
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.48518
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.48518
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.48518
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.48518
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.48518
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.48518
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.48518
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.48518
+-------------------------
+
+             Transform       0.0 CPU seconds       0.0 Wall seconds
+  Memleft= 421227156 doubles
+
+Vector    1
+ Spin  Occ  Vir     X+Y       A+B
+    1    1    6   0.00000  -0.00000
+    1    1    7   0.00000   0.00000
+    1    2    6   0.00000   0.00000
+    1    2    7   0.00000   0.00000
+    1    3    6   0.00000   0.00000
+    1    3    7   0.00000   0.00000
+    1    4    6   0.00000  -0.00000
+    1    4    7   0.00000   0.00000
+    1    5    6   1.00000   0.48518
+    1    5    7   0.00000  -0.00000
+               Epsilon       0.0 CPU seconds       0.0 Wall seconds
+  Memleft= 421227156 doubles
+
+ A+B
+-------------------------
+
+              1
+    1   0.48518
+-------------------------
+
+              Subspace       0.0 CPU seconds       0.0 Wall seconds
+  Memleft= 421227164 doubles
+
+ Eigenvalues
+-------------------------
+
+              1
+    1   0.48518
+-------------------------
+
+
+ Eigenvectors
+-------------------------
+
+              1
+    1   1.00000
+-------------------------
+
+                Diagon       0.0 CPU seconds       0.0 Wall seconds
+  Memleft= 421227164 doubles
+  Norm of residuals
+    0.00000000
+
+ global array: residual vectors 1[1:10,1:1],  handle: -995 
+
+            1  
+       -----------
+   1      -0.00000
+   2       0.00000
+   3       0.00000
+   4       0.00000
+   5       0.00000
+   6       0.00000
+   7      -0.00000
+   8       0.00000
+   9       0.00000
+  10      -0.00000
+              Residual       0.0 CPU seconds       0.0 Wall seconds
+  Memleft= 421227164 doubles
+    1      1       1     0.74E-15   0.10+100        0.0
+  ----  ------  ------  ---------  ---------  --------- 
+  Convergence criterion met
+
+  Ground state a1        -74.962927938207 a.u.
+
+  ----------------------------------------------------------------------------
+  Root   1 singlet b2             0.485180479 a.u.               13.2024 eV 
+
+ global array: Transition density[1:7,1:7],  handle: -992 
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.00000     0.00000     0.00000    -0.13239    -0.00000    -0.00000
+   2       0.00000    -0.00000    -0.00000     0.88477     0.00000     0.00000
+   3       0.00000    -0.00000    -0.00000     0.00000     0.00000     0.00000
+   4       0.00000    -0.00000    -0.00000     0.00000     0.00000     0.00000
+   5      -0.00000     0.00000     0.00000    -0.74231    -0.00000    -0.00000
+   6      -0.00000     0.00000     0.00000    -0.79716    -0.00000    -0.00000
+   7      -0.00000     0.00000     0.00000    -0.79716    -0.00000    -0.00000
+
+            7  
+       -----------
+   1      -0.00000
+   2       0.00000
+   3       0.00000
+   4       0.00000
+   5      -0.00000
+   6      -0.00000
+   7      -0.00000
+  ----------------------------------------------------------------------------
+     Transition Moments    X  0.00000   Y -0.10476   Z -0.00000
+     Transition Moments   XX  0.00000  XY -0.00000  XZ -0.00000
+     Transition Moments   YY -0.00000  YZ  0.03864  ZZ  0.00000
+     Dipole Oscillator Strength                         0.00355
+
+     Occ.    5  b2  ---  Virt.    6  a1     1.00000
+
+              Target root =      1
+          Target symmetry = none
+      Ground state energy =    -74.962927938207
+        Excitation energy =      0.485180479057
+     Excited state energy =    -74.477747459150
+
+ fn_civecs: output_singlet                                                                                                                                                                                                                                                 
+
+  CI vectors are stored in ./output_singlet                
+              Analysis       0.0 CPU seconds       0.0 Wall seconds
+  Memleft= 421227164 doubles
+ Ground state symmetry a1  
+
+    1 smallest eigenvalue differences (eV) 
+--------------------------------------------------------
+  No. Spin  Occ  Vir  Irrep   E(Occ)    E(Vir)   E(Diff)
+--------------------------------------------------------
+    1    1    5    6 b2       -0.391     0.606    27.128
+--------------------------------------------------------
+          Number of initial trial vectors generated        1
+
+Vector    1
+ Spin  Occ  Vir     X+Y
+    1    1    6   0.00000
+    1    1    7   0.00000
+    1    2    6   0.00000
+    1    2    7   0.00000
+    1    3    6   0.00000
+    1    3    7   0.00000
+    1    4    6   0.00000
+    1    4    7   0.00000
+    1    5    6   1.00000
+    1    5    7   0.00000
+
+  Entering Davidson iterations
+  Restricted triplet excited states
+
+  Iter   NTrls   NConv    DeltaV     DeltaE      Time   
+  ----  ------  ------  ---------  ---------  --------- 
+
+ global array: Trial density[1:7,1:7],  handle: -997 
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.00000     0.00000     0.00000    -0.13239    -0.00000    -0.00000
+   2       0.00000    -0.00000    -0.00000     0.88477     0.00000     0.00000
+   3       0.00000    -0.00000    -0.00000     0.00000     0.00000     0.00000
+   4       0.00000    -0.00000    -0.00000     0.00000     0.00000     0.00000
+   5      -0.00000     0.00000     0.00000    -0.74231    -0.00000    -0.00000
+   6      -0.00000     0.00000     0.00000    -0.79716    -0.00000    -0.00000
+   7      -0.00000     0.00000     0.00000    -0.79716    -0.00000    -0.00000
+
+            7  
+       -----------
+   1      -0.00000
+   2       0.00000
+   3       0.00000
+   4       0.00000
+   5      -0.00000
+   6      -0.00000
+   7      -0.00000
+             Transform       0.0 CPU seconds       0.0 Wall seconds
+  Memleft= 421227156 doubles
+
+ global array: Work sym[1:1,1:7,1:7],  handle: -992 
+
+ -- patch: Work sym[1:1,1:7,1]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.00000     0.00000     0.00000    -0.13239    -0.00000    -0.00000
+
+            7  
+       -----------
+   1      -0.00000
+
+ -- patch: Work sym[1:1,1:7,2]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000    -0.00000    -0.00000     0.88477     0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work sym[1:1,1:7,3]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000    -0.00000    -0.00000     0.00000     0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work sym[1:1,1:7,4]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.13239     0.88477     0.00000     0.00000    -0.74231    -0.79716
+
+            7  
+       -----------
+   1      -0.79716
+
+ -- patch: Work sym[1:1,1:7,5]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.00000     0.00000     0.00000    -0.74231    -0.00000    -0.00000
+
+            7  
+       -----------
+   1      -0.00000
+
+ -- patch: Work sym[1:1,1:7,6]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.00000     0.00000     0.00000    -0.79716    -0.00000    -0.00000
+
+            7  
+       -----------
+   1      -0.00000
+
+ -- patch: Work sym[1:1,1:7,7]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.00000     0.00000     0.00000    -0.79716    -0.00000    -0.00000
+
+            7  
+       -----------
+   1      -0.00000
+  shmap   4     5     1     2     3
+  type       2048     2048     2049     2081  1050689
+ nshblocks   4   blen  7  maxsh 10
+  shglo   1     3     4     5
+  shghi   2     3     4     5
+  bfglo   1     3     4     5
+  bfghi   2     3     4     7
+  bfmap   6     7     1     2     3     4     5
+ rbfmap   3     4     5     6     7     1     2
+ shbflo   1     2     3     4     5
+ shbfhi   1     2     3     4     7
+
+ global array: Work product[1:1,1:7,1:7],  handle: -993 
+
+ -- patch: Work product[1:1,1:7,1]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000     0.00000    -0.00000    -0.00029    -0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work product[1:1,1:7,2]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000     0.00000     0.00000    -0.11843    -0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work product[1:1,1:7,3]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.00000     0.00000    -0.00000    -0.00000     0.00000     0.00000
+
+            7  
+       -----------
+   1      -0.00000
+
+ -- patch: Work product[1:1,1:7,4]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.00029    -0.11843    -0.00000    -0.00000     0.18697     0.04406
+
+            7  
+       -----------
+   1       0.04406
+
+ -- patch: Work product[1:1,1:7,5]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.00000    -0.00000     0.00000     0.18697    -0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work product[1:1,1:7,6]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000     0.00000     0.00000     0.04406     0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work product[1:1,1:7,7]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000     0.00000    -0.00000     0.04406     0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ global array: Work sym[1:1,1:7,1:7],  handle: -992 
+
+ -- patch: Work sym[1:1,1:7,1]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000    -0.00000    -0.00000     0.13239     0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work sym[1:1,1:7,2]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000     0.00000     0.00000    -0.88477     0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work sym[1:1,1:7,3]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000    -0.00000     0.00000    -0.00000     0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work sym[1:1,1:7,4]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.13239     0.88477     0.00000     0.00000    -0.74231    -0.79716
+
+            7  
+       -----------
+   1      -0.79716
+
+ -- patch: Work sym[1:1,1:7,5]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.00000    -0.00000    -0.00000     0.74231     0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work sym[1:1,1:7,6]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.00000    -0.00000    -0.00000     0.79716    -0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work sym[1:1,1:7,7]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.00000    -0.00000    -0.00000     0.79716    -0.00000    -0.00000
+
+            7  
+       -----------
+   1       0.00000
+  shmap   4     5     1     2     3
+  type       2048     2048     2049     2081  1050689
+ nshblocks   4   blen  7  maxsh 10
+  shglo   1     3     4     5
+  shghi   2     3     4     5
+  bfglo   1     3     4     5
+  bfghi   2     3     4     7
+  bfmap   6     7     1     2     3     4     5
+ rbfmap   3     4     5     6     7     1     2
+ shbflo   1     2     3     4     5
+ shbfhi   1     2     3     4     7
+
+ global array: Work[1:1,1:7,1:7],  handle: -990 
+
+ -- patch: Work[1:1,1:7,1]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000     0.00000     0.00000    -0.01402    -0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work[1:1,1:7,2]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000     0.00000    -0.00000     0.05528    -0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work[1:1,1:7,3]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.00000     0.00000     0.00000     0.00000     0.00000    -0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work[1:1,1:7,4]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.01402    -0.05528    -0.00000     0.00000     0.16254     0.06508
+
+            7  
+       -----------
+   1       0.06508
+
+ -- patch: Work[1:1,1:7,5]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000     0.00000    -0.00000    -0.16254     0.00000    -0.00000
+
+            7  
+       -----------
+   1      -0.00000
+
+ -- patch: Work[1:1,1:7,6]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000     0.00000     0.00000    -0.06508     0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work[1:1,1:7,7]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000     0.00000    -0.00000    -0.06508     0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ global array: Work product[1:1,1:7,1:7],  handle: -993 
+
+ -- patch: Work product[1:1,1:7,1]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000     0.00000     0.00000    -0.01431    -0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work product[1:1,1:7,2]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000     0.00000    -0.00000    -0.06315    -0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work product[1:1,1:7,3]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.00000     0.00000    -0.00000    -0.00000     0.00000     0.00000
+
+            7  
+       -----------
+   1      -0.00000
+
+ -- patch: Work product[1:1,1:7,4]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.01373    -0.17371    -0.00000    -0.00000     0.34950     0.10914
+
+            7  
+       -----------
+   1       0.10914
+
+ -- patch: Work product[1:1,1:7,5]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.00000    -0.00000     0.00000     0.02443    -0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work product[1:1,1:7,6]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000     0.00000     0.00000    -0.02102     0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+
+ -- patch: Work product[1:1,1:7,7]
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1       0.00000     0.00000    -0.00000    -0.02102     0.00000     0.00000
+
+            7  
+       -----------
+   1       0.00000
+              Contract       0.0 CPU seconds       0.0 Wall seconds
+  Memleft= 421227156 doubles
+             Transform       0.0 CPU seconds       0.0 Wall seconds
+  Memleft= 421227156 doubles
+
+Vector    1
+ Spin  Occ  Vir     X+Y       A+B
+    1    1    6   0.00000  -0.00000
+    1    1    7   0.00000  -0.00000
+    1    2    6   0.00000   0.00000
+    1    2    7   0.00000  -0.00000
+    1    3    6   0.00000   0.00000
+    1    3    7   0.00000  -0.00000
+    1    4    6   0.00000  -0.00000
+    1    4    7   0.00000  -0.00000
+    1    5    6   1.00000   0.40796
+    1    5    7   0.00000  -0.00000
+               Epsilon       0.0 CPU seconds       0.0 Wall seconds
+  Memleft= 421227156 doubles
+
+ A+B
+-------------------------
+
+              1
+    1   0.40796
+-------------------------
+
+              Subspace       0.0 CPU seconds       0.0 Wall seconds
+  Memleft= 421227164 doubles
+
+ Eigenvalues
+-------------------------
+
+              1
+    1   0.40796
+-------------------------
+
+
+ Eigenvectors
+-------------------------
+
+              1
+    1   1.00000
+-------------------------
+
+                Diagon       0.0 CPU seconds       0.0 Wall seconds
+  Memleft= 421227164 doubles
+  Norm of residuals
+    0.00000000
+
+ global array: residual vectors 1[1:10,1:1],  handle: -995 
+
+            1  
+       -----------
+   1      -0.00000
+   2      -0.00000
+   3       0.00000
+   4      -0.00000
+   5       0.00000
+   6      -0.00000
+   7      -0.00000
+   8      -0.00000
+   9       0.00000
+  10      -0.00000
+              Residual       0.0 CPU seconds       0.0 Wall seconds
+  Memleft= 421227164 doubles
+    1      1       1     0.14E-15   0.10+100        0.0
+  ----  ------  ------  ---------  ---------  --------- 
+  Convergence criterion met
+
+ A+B
+-------------------------
+
+              1
+    1   0.40796
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.40796
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.40796
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.40796
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.40796
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.40796
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.40796
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.40796
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.40796
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.40796
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.40796
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.40796
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.40796
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.40796
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.40796
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.40796
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.40796
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.40796
+-------------------------
+
+
+ A+B
+-------------------------
+
+              1
+    1   0.40796
+-------------------------
+
+
+  Ground state a1        -74.962927938207 a.u.
+
+  ----------------------------------------------------------------------------
+  Root   1 triplet b2             0.407963330 a.u.               11.1013 eV 
+
+ global array: Transition density[1:7,1:7],  handle: -992 
+
+            1           2           3           4           5           6  
+       ----------- ----------- ----------- ----------- ----------- -----------
+   1      -0.00000     0.00000     0.00000    -0.13239    -0.00000    -0.00000
+   2       0.00000    -0.00000    -0.00000     0.88477     0.00000     0.00000
+   3       0.00000    -0.00000    -0.00000     0.00000     0.00000     0.00000
+   4       0.00000    -0.00000    -0.00000     0.00000     0.00000     0.00000
+   5      -0.00000     0.00000     0.00000    -0.74231    -0.00000    -0.00000
+   6      -0.00000     0.00000     0.00000    -0.79716    -0.00000    -0.00000
+   7      -0.00000     0.00000     0.00000    -0.79716    -0.00000    -0.00000
+
+            7  
+       -----------
+   1      -0.00000
+   2       0.00000
+   3       0.00000
+   4       0.00000
+   5      -0.00000
+   6      -0.00000
+   7      -0.00000
+  ----------------------------------------------------------------------------
+     Transition Moments                    Spin forbidden
+     Oscillator Strength                   Spin forbidden
+
+     Occ.    5  b2  ---  Virt.    6  a1     1.00000
+
+              Target root =      1
+          Target symmetry = none
+      Ground state energy =    -74.962927938207
+        Excitation energy =      0.407963329528
+     Excited state energy =    -74.554964608679
+
+ fn_civecs: output_triplet                                                                                                                                                                                                                                                 
+
+  CI vectors are stored in ./output_triplet                
+              Analysis       0.0 CPU seconds       0.0 Wall seconds
+  Memleft= 421227164 doubles
+
+ Task  times  cpu:        0.1s     wall:        0.1s
+
+
+                                NWChem Input Module
+                                -------------------
+
+
+ Summary of allocated global arrays
+-----------------------------------
+  No active global arrays
+
+
+
+                         GA Statistics for process    0
+                         ------------------------------
+
+       create   destroy   get      put      acc     scatter   gather  read&inc
+calls:  216      216      786      258      126        4        0       28     
+number of processes/call 2.03e+00 1.81e+00 4.02e+00 0.00e+00 0.00e+00
+bytes total:             1.36e+05 4.61e+04 4.44e+04 3.20e+01 0.00e+00 2.24e+02
+bytes remote:            2.63e+04 8.13e+03 1.65e+04 0.00e+00 0.00e+00 0.00e+00
+Max memory consumed for GA by this process: 68872 bytes
+
+MA_summarize_allocated_blocks: starting scan ...
+MA_summarize_allocated_blocks: scan completed: 0 heap blocks, 0 stack blocks
+MA usage statistics:
+
+	allocation statistics:
+					      heap	     stack
+					      ----	     -----
+	current number of blocks	         0	         0
+	maximum number of blocks	        21	        34
+	current total bytes		         0	         0
+	maximum total bytes		     80136	  22510184
+	maximum total K-bytes		        81	     22511
+	maximum total M-bytes		         1	        23
+
+
+                                     CITATION
+                                     --------
+                Please cite the following reference when publishing
+                           results obtained with NWChem:
+
+                 M. Valiev, E.J. Bylaska, N. Govind, K. Kowalski,
+              T.P. Straatsma, H.J.J. van Dam, D. Wang, J. Nieplocha,
+                        E. Apra, T.L. Windus, W.A. de Jong
+                 "NWChem: a comprehensive and scalable open-source
+                  solution for large scale molecular simulations"
+                      Comput. Phys. Commun. 181, 1477 (2010)
+                           doi:10.1016/j.cpc.2010.04.018
+
+                                      AUTHORS
+                                      -------
+          E. Apra, E. J. Bylaska, W. A. de Jong, N. Govind, K. Kowalski,
+       T. P. Straatsma, M. Valiev, H. J. J. van Dam, D. Wang, T. L. Windus,
+        J. Hammond, J. Autschbach, K. Bhaskaran-Nair, J. Brabec, K. Lopata,
+       S. A. Fischer, S. Krishnamoorthy, W. Ma, M. Klemm, O. Villa, Y. Chen,
+    V. Anisimov, F. Aquino, S. Hirata, M. T. Hackler, T. Risthaus, M. Malagoli,
+       A. Marenich, A. Otero-de-la-Roza, J. Mullin, P. Nichols, R. Peverati,
+     J. Pittner, Y. Zhao, P.-D. Fan, A. Fonari, M. Williamson, R. J. Harrison,
+       J. R. Rehr, M. Dupuis, D. Silverstein, D. M. A. Smith, J. Nieplocha,
+        V. Tipparaju, M. Krishnan, B. E. Van Kuiken, A. Vazquez-Mayagoitia,
+        L. Jensen, M. Swart, Q. Wu, T. Van Voorhis, A. A. Auer, M. Nooijen,
+      L. D. Crosby, E. Brown, G. Cisneros, G. I. Fann, H. Fruchtl, J. Garza,
+        K. Hirao, R. A. Kendall, J. A. Nichols, K. Tsemekhman, K. Wolinski,
+     J. Anchell, D. E. Bernholdt, P. Borowski, T. Clark, D. Clerc, H. Dachsel,
+   M. J. O. Deegan, K. Dyall, D. Elwood, E. Glendening, M. Gutowski, A. C. Hess,
+         J. Jaffe, B. G. Johnson, J. Ju, R. Kobayashi, R. Kutteh, Z. Lin,
+   R. Littlefield, X. Long, B. Meng, T. Nakajima, S. Niu, L. Pollack, M. Rosing,
+   K. Glaesemann, G. Sandrone, M. Stave, H. Taylor, G. Thomas, J. H. van Lenthe,
+                               A. T. Wong, Z. Zhang.
+
+ Total times  cpu:        0.1s     wall:        0.3s

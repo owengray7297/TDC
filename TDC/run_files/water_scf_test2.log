@@ -1,0 +1,265 @@
+ argument  1 = /scratch/owengray/water_scf_test2/water_scf_test2.nw
+
+
+
+============================== echo of input deck ==============================
+echo
+
+start h2o
+title "Water in STO-3G basis set"
+
+scratch_dir /scratch/owengray/water_scf_test2/
+
+geometry units au
+	O	0.00000000	0.00000000	0.00000000
+	H	0.00000000	1.43042809	-1.10715266
+	H	0.00000000	-1.43042809	-1.10715266
+end
+basis
+	H library STO-3G
+	O library STO-3G
+end
+dft
+	vectors output h2o.movecs
+	XC HFexch
+end
+TDDFT
+ notriplet
+ cisd
+ CIVECS
+ print debug
+ print transform
+END
+TASK TDDFT energy
+================================================================================
+
+
+                                         
+                                         
+
+
+              Northwest Computational Chemistry Package (NWChem) 6.6
+              ------------------------------------------------------
+
+
+                    Environmental Molecular Sciences Laboratory
+                       Pacific Northwest National Laboratory
+                                Richland, WA 99352
+
+                              Copyright (c) 1994-2015
+                       Pacific Northwest National Laboratory
+                            Battelle Memorial Institute
+
+             NWChem is an open-source computational chemistry package
+                        distributed under the terms of the
+                      Educational Community License (ECL) 2.0
+             A copy of the license is included with this distribution
+                              in the LICENSE.TXT file
+
+                                  ACKNOWLEDGMENT
+                                  --------------
+
+            This software and its documentation were developed at the
+            EMSL at Pacific Northwest National Laboratory, a multiprogram
+            national laboratory, operated for the U.S. Department of Energy
+            by Battelle under Contract Number DE-AC05-76RL01830. Support
+            for this work was provided by the Department of Energy Office
+            of Biological and Environmental Research, Office of Basic
+            Energy Sciences, and the Office of Advanced Scientific Computing.
+
+
+           Job information
+           ---------------
+
+    hostname        = g26
+    program         = /cm/shared/NWChem/bin/nwchem
+    date            = Wed Jun 22 15:19:33 2016
+
+    compiled        = Wed_Jan_27_15:20:39_2016
+    source          = /cm/shared/nwchem-6.6
+    nwchem branch   = 6.6
+    nwchem revision = 27746
+    ga revision     = 10594
+    input           = /scratch/owengray/water_scf_test2/water_scf_test2.nw
+    prefix          = h2o.
+    data base       = ./h2o.db
+    status          = startup
+    nproc           =       20
+    time left       =     -1s
+
+
+
+           Memory information
+           ------------------
+
+    heap     =  210617852 doubles =   1606.9 Mbytes
+    stack    =  210617857 doubles =   1606.9 Mbytes
+    global   =  421235712 doubles =   3213.8 Mbytes (distinct from heap & stack)
+    total    =  842471421 doubles =   6427.5 Mbytes
+    verify   = yes
+    hardfail = no 
+
+
+           Directory information
+           ---------------------
+
+  0 permanent = .
+  0 scratch   = /scratch/owengray/water_scf_test2/
+
+
+
+
+                                NWChem Input Module
+                                -------------------
+
+
+                             Water in STO-3G basis set
+                             -------------------------
+ C2V symmetry detected
+
+          ------
+          auto-z
+          ------
+
+
+                             Geometry "geometry" -> ""
+                             -------------------------
+
+ Output coordinates in a.u. (scale by  1.000000000 to convert to a.u.)
+
+  No.       Tag          Charge          X              Y              Z
+ ---- ---------------- ---------- -------------- -------------- --------------
+    1 O                    8.0000     0.00000000     0.00000000     0.22143053
+    2 H                    1.0000    -1.43042809     0.00000000    -0.88572213
+    3 H                    1.0000     1.43042809     0.00000000    -0.88572213
+
+      Atomic Mass 
+      ----------- 
+
+      O                 15.994910
+      H                  1.007825
+
+
+ Effective nuclear repulsion energy (a.u.)       9.1949809303
+
+            Nuclear Dipole moment (a.u.) 
+            ----------------------------
+        X                 Y               Z
+ ---------------- ---------------- ----------------
+     0.0000000000     0.0000000000     0.0000000000
+
+      Symmetry information
+      --------------------
+
+ Group name             C2v       
+ Group number             16
+ Group order               4
+ No. of unique centers     2
+
+      Symmetry unique atoms
+
+     1    2
+
+
+
+                                Z-matrix (autoz)
+                                -------- 
+
+ Units are Angstrom for bonds and degrees for angles
+
+      Type          Name      I     J     K     L     M      Value
+      ----------- --------  ----- ----- ----- ----- ----- ----------
+    1 Stretch                  1     2                       0.95720
+    2 Stretch                  1     3                       0.95720
+    3 Bend                     2     1     3               104.52019
+
+
+            XYZ format geometry
+            -------------------
+     3
+ geometry
+ O                     0.00000000     0.00000000     0.11717600
+ H                    -0.75695000     0.00000000    -0.46870400
+ H                     0.75695000     0.00000000    -0.46870400
+
+ ==============================================================================
+                                internuclear distances
+ ------------------------------------------------------------------------------
+       center one      |      center two      | atomic units |       a.u.
+ ------------------------------------------------------------------------------
+    2 H                |   1 O                |     1.80884  |     1.80884
+    3 H                |   1 O                |     1.80884  |     1.80884
+ ------------------------------------------------------------------------------
+                         number of included internuclear distances:          2
+ ==============================================================================
+
+
+
+ ==============================================================================
+                                 internuclear angles
+ ------------------------------------------------------------------------------
+        center 1       |       center 2       |       center 3       |  degrees
+ ------------------------------------------------------------------------------
+    2 H                |   1 O                |   3 H                |   104.52
+ ------------------------------------------------------------------------------
+                            number of included internuclear angles:          1
+ ==============================================================================
+
+
+
+  library name resolved from: environment
+  library file name is: </cm/shared/NWChem/data/libraries/>
+  
+                      Basis "ao basis" -> "" (cartesian)
+                      -----
+  H (Hydrogen)
+  ------------
+            Exponent  Coefficients 
+       -------------- ---------------------------------------------------------
+  1 S  3.42525091E+00  0.154329
+  1 S  6.23913730E-01  0.535328
+  1 S  1.68855400E-01  0.444635
+
+  O (Oxygen)
+  ----------
+            Exponent  Coefficients 
+       -------------- ---------------------------------------------------------
+  1 S  1.30709320E+02  0.154329
+  1 S  2.38088610E+01  0.535328
+  1 S  6.44360830E+00  0.444635
+
+  2 S  5.03315130E+00 -0.099967
+  2 S  1.16959610E+00  0.399513
+  2 S  3.80389000E-01  0.700115
+
+  3 P  5.03315130E+00  0.155916
+  3 P  1.16959610E+00  0.607684
+  3 P  3.80389000E-01  0.391957
+
+
+
+ Summary of "ao basis" -> "" (cartesian)
+ ------------------------------------------------------------------------------
+       Tag                 Description            Shells   Functions and Types
+ ---------------- ------------------------------  ------  ---------------------
+ H                           STO-3G                  1        1   1s
+ O                           STO-3G                  3        5   2s1p
+
+
+  xc_inp: hfexch multiplicative factor not found.
+ ------------------------------------------------------------------------
+ tddft_input: unknown directive                   0
+ ------------------------------------------------------------------------
+ ------------------------------------------------------------------------
+  current input line : 
+    23:  cisd
+ ------------------------------------------------------------------------
+ ------------------------------------------------------------------------
+ There is an error in the input file
+ ------------------------------------------------------------------------
+ For more information see the NWChem manual at http://www.nwchem-sw.org/index.php/NWChem_Documentation
+
+
+ For further details see manual section:                                                                                                                                                                                                                                                                
+0:0:tddft_input: unknown directive:: -1
+(rank:0 hostname:g26 pid:28457):ARMCI DASSERT fail. ../../ga-5-4/armci/src/common/armci.c:ARMCI_Error():208 cond:0

@@ -1,0 +1,40 @@
+echo
+
+start h2_scf_test1
+title "H2 in STO-3G basis set"
+
+scratch_dir /scratch/owengray/h2_scf_test1/
+
+geometry units au
+	H	0.00000000	0.00000000	0.00000000
+	H	0.00000000	1.00000000	0.00000000
+end
+basis
+	H library STO-3G
+end
+
+charge 0
+scf
+	rohf
+	vectors output h2_scf_test.movecs
+end
+task scf energy
+
+tddft
+	cis
+	print debug
+	notriplet
+	civecs
+end
+TASK TDDFT energy
+
+dplot
+	root 1
+	limitxyz
+		-2 2 50
+		-2 2 50
+		-2 2 50
+		gaussian
+		output root1.cube
+end
+task dplot

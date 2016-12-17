@@ -1,0 +1,34 @@
+# of points, # of atomic orbitals, # of molec. orb., # of config. orb.
+
+//python, computing for 1 configuration orbital
+
+1000, 14, 20, 50
+1.669, 1.686, 1.647, 1.668, 1.702
+
+10000, 14, 20, 50
+15.38
+
+100000, 14, 20, 50
+151.5
+
+1000, 14, 200, 50
+15.23
+
+1000, 14, 2000, 50
+151.36
+
+mathematica, computing for every configuration orbital
+1000, 14, 20, 50
+0.920
+
+10000, 14, 20, 50
+8.725
+
+
+
+mathematica, computing for 1 configuration orbital
+1000, 14, 20, 50
+0.852
+
+10000, 14, 20, 50
+8.468
